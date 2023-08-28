@@ -1,9 +1,7 @@
 # Docker-команда FROM указывает базовый образ контейнера
-# Наш базовый образ - это Linux с предустановленным python-3.10
+# Наш базовый образ - это Linux с предустановленным python
 FROM python:3.8.4
 
-# Установим переменную окружения
-ENV APP_HOME /app
 
 # Установим рабочую директорию внутри контейнера
 WORKDIR $APP_HOME
@@ -18,4 +16,4 @@ RUN pip install -r requirements.txt
 
 
 # Запустим наше приложение внутри контейнера
-ENTRYPOINT ["python", "assistant.py"]
+ENTRYPOINT ["python", "src"]
